@@ -1,0 +1,28 @@
+<div style="width 100%; text-align: center;">
+  <a href="https://www.pexels.com">
+    <img src="https://images.pexels.com/lib/api/pexels.png" style="width: 300px;" />
+  </a>
+    <div style="margin: 10px auto; width: 50%; display: flex; flex-direction: column; align-items: center;">
+
+      <%= form_with url: static_pages_home_path, method: :get do |form| %>
+
+        <%= form.text_field :query %>
+        <%= form.submit "Search images" %>
+
+      <% end %>
+      
+    </div>
+
+    <div style="margin: 50px auto; width:85%;">
+      <% if @photos.any? %>
+        <h2>Images</h2>
+        <div style="padding: 10px; border-radius: 10px; display:flex; flex-wrap: wrap; gap: 10px; width:100%; border: 2px solid gray;">
+          <% @photos.each do |photo| %>
+            <div style=" display: flex; flex-direction: column; align-items: start;">
+              <%= image_tag(photo[:src]) %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
