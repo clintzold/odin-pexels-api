@@ -3,7 +3,10 @@
 This is an app for The Odin Project at https://www.theodinproject.com/lessons/ruby-on-rails-pexels-api
 
 The goal is to create an application that takes an ID for a pexel collection and then
-displays the images within the collection by requesting them via their API
+displays the images within the collection by requesting them via their API.
+
+I decided to make it more interesting and make a call to their search query with the
+submitted form data.
 
 * Ruby version
 

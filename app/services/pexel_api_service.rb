@@ -11,7 +11,6 @@ class PexelApiService
   end
 
   def call
-    puts @api_key
     response = HTTParty.get(@base_uri + @query + "&per_page=10", headers: {"Authorization" => @api_key })
     collect_photos(response.body)
   end
