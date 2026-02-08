@@ -14,15 +14,20 @@
     </div>
 
     <div style="margin: 50px auto; width:85%;">
-      <% if @photos.any? %>
+
+      <% if @photos %>
         <h2>Images</h2>
+
         <div style="padding: 10px; border-radius: 10px; display:flex; flex-wrap: wrap; gap: 10px; width:100%; border: 2px solid gray;">
           <% @photos.each do |photo| %>
+
             <div style=" display: flex; flex-direction: column; align-items: start;">
               <%= image_tag(photo[:src]) %>
             </div>
+
           <% end %>
         </div>
+
       <% end %>
     </div>
 </div>

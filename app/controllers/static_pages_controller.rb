@@ -1,10 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-    @photos = []
     if params[:query]
       service = PexelApiService.new(params[:query])
       service.call
-      @photos = service.photos
+      @photos = service.photos unless service.photos.nil?
     end
   end
 end

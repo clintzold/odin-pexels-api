@@ -13,7 +13,7 @@ class PexelApiService
   def call
     puts @api_key
     response = HTTParty.get(@base_uri + @query + "&per_page=10", headers: {"Authorization" => @api_key })
-    collect_photos(response.to_s)
+    collect_photos(response.body)
   end
 
   private
@@ -23,7 +23,7 @@ class PexelApiService
     collection = []
     parsed_response["photos"].each do |photo|
       collection << {
-        src: photo["src"]["small"],
+        src: photo["src"]["medium"],
         photographer: photo["photographer"],
         photographer_url: photo["photographer_url"]
       }
